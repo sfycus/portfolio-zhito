@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f1e5d0">
+  <meta name="description" content="Жито — ремесленная пекарня с хлебом по подписке.">
+  <title>Жито — ремесленная пекарня и хлеб по подписке</title>
+  <link rel="stylesheet" href="styles.css"><script src="app.js" defer></script>
+</head>
+<body>
+  <div class="announcement">ЗАМЕС КАЖДЫЙ ДЕНЬ · ВЫДАЧА ПОДПИСОК ВО ВТОРНИК, ЧЕТВЕРГ И СУББОТУ</div>
+  <header><a class="logo" href="#top" aria-label="Жито, на главную">Ж<span>И</span>ТО<span class="logo-dot">.</span></a><nav aria-label="Навигация"><a href="#breads">Хлеб</a><a href="#subscription">Подписка</a><a href="#bakery">Пекарня</a></nav><a class="basket-link" href="#subscription">Мой набор <span id="basketCount">0</span></a></header>
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="hero-title"><div class="tiny-rule">ВЫПУСК 47 / ВИТРИНА ПЕКАРНИ</div><h1>Сегодня<br><i>из печи.</i></h1></div>
+        <div class="hero-aside"><p>К 08:00 на Хлебном, 14: пшеничный на закваске, ржаной с солодом и фокачча. Остальную выпечку смотрите в витрине ниже.</p><a class="pill-button" href="#breads">Вся витрина <span>↘</span></a></div>
+      </div>
+      <figure class="hero-photo"><img src="assets/bread-in-hands.jpg" alt="Свежий хлеб в руках" fetchpriority="high"><figcaption>ПОСЛЕ ПЕЧИ / ПОКА ТЁПЛЫЙ</figcaption></figure>
+      <div class="hero-shelf" aria-label="Выпечка дня">
+        <div class="shelf-heading"><span>01—03 / В ПЕЧИ</span><strong>Хлеб на каждый день</strong><small>замес 06:00</small></div>
+        <article class="shelf-item"><span class="shelf-num">01</span><h2>Пшеничный<br>на закваске</h2><p>650 г · 420 ₽</p><button type="button" data-feature="sourdough">В набор +</button></article>
+        <article class="shelf-item"><span class="shelf-num">02</span><h2>Ржаной<br>с солодом</h2><p>700 г · 490 ₽</p><button type="button" data-feature="rye">В набор +</button></article>
+        <article class="shelf-item"><span class="shelf-num">03</span><h2>Фокачча<br>с розмарином</h2><p>500 г · 560 ₽</p><button type="button" data-feature="focaccia">В набор +</button></article>
+      </div>
+      <div class="hero-foot"><span>ПЕКАРНЯ ОТКРЫТА 08:00–20:00</span><span>МОСКВА · ХЛЕБНЫЙ ПЕРЕУЛОК, 14</span><span>ВЫДАЧА ПОДПИСОК: ВТ / ЧТ / СБ</span></div>
+    </section>
+    <section class="intro" id="bakery"><div class="intro-photo"><img src="assets/kneading.jpg" alt="Пекарь вручную замешивает тесто" loading="lazy"></div><div class="intro-content"><p class="overline">НАША ПЕКАРНЯ</p><h2>Закваска живёт сутки.<br><em>Печь включаем в 06:00.</em></h2><div class="intro-grid"><p>Тесто живёт сутки и больше. Закваску кормим каждый день, муку выбираем по вкусу, а не по этикетке. Поэтому утром на полке — хлеб, который пахнет домом.</p><div class="stat"><strong>24+</strong><span>часа для теста</span></div><div class="stat"><strong>06:00</strong><span>первая печь</span></div></div></div></section>
+    <section class="breads" id="breads"><div class="section-title"><div><p class="overline">ВИТРИНА / СЕГОДНЯ</p><h2>Что в печи.</h2></div><p>Добавьте выпечку в набор. Количество можно изменить в подписке.</p></div><div class="catalog-image"><img src="assets/bread-shelves.jpg" alt="Свежий ремесленный хлеб на полках пекарни" loading="lazy"><span>Каждый день печём небольшими партиями.</span></div><div class="catalog-filter" role="group" aria-label="Фильтры каталога"><button type="button" class="active" data-filter="all" aria-pressed="true">Всё</button><button type="button" data-filter="bread" aria-pressed="false">Хлеб</button><button type="button" data-filter="pastry" aria-pressed="false">Выпечка</button></div><div class="product-grid" id="productGrid"></div></section>
+    <section class="subscription" id="subscription"><div class="subscription-head"><div><p class="overline">ПОДПИСКА</p><h2>Ваш хлебный<br><i>четверг.</i></h2></div><p>Выберите любимое, день выдачи и срок. Календарь составится сам. Набор сохраняется в браузере и доступен для печати.</p></div><div class="subscription-grid"><div class="builder"><h3>01 / Ваш набор</h3><div id="basketItems" class="basket-items"></div><div class="builder-fields"><h3>02 / Ритм</h3><div class="field-grid"><label>Получать<select id="frequency"><option value="1">Каждую неделю</option><option value="2">Раз в две недели</option></select></label><label>Срок<select id="weeks"><option value="4">4 выдачи</option><option value="8">8 выдач</option><option value="12">12 выдач</option></select></label></div><fieldset><legend>День выдачи</legend><label><input type="radio" name="pickupDay" value="2" checked> Вторник</label><label><input type="radio" name="pickupDay" value="4"> Четверг</label><label><input type="radio" name="pickupDay" value="6"> Суббота</label></fieldset><label class="start-label">Не раньше<input id="startDate" type="date" required></label></div></div><aside class="receipt"><div class="receipt-top"><span>ЖИТО / ПОДПИСКА</span><span>№ <span id="receiptNumber">001</span></span></div><h3>Хороший хлеб<br>по расписанию.</h3><div class="receipt-lines"><div><span>Набор на одну выдачу</span><b id="perPickup">0 ₽</b></div><div><span>Скидка подписки 8%</span><b id="discount">0 ₽</b></div><div><span>Выдач</span><b id="pickupCount">4</b></div></div><div class="receipt-total"><span>За весь срок</span><strong id="grandTotal">0 ₽</strong></div><div class="schedule"><h4>Календарь выдачи</h4><ol id="scheduleList"></ol></div><button id="savePlan" type="button" class="save-button">Сохранить набор ↗</button><button id="downloadCalendar" type="button" class="text-button">Скачать календарь .ics ↓</button><p id="status" role="status"></p><small>Подписка хранится только на вашем устройстве; оплата и отправка в пекарню на локальном сайте не выполняются.</small></aside></div></section>
+  </main>
+  <footer><div class="footer-logo">ЖИТО.</div><p>Пекарня открыта каждый день с 08:00 до 20:00.<br>Москва, Хлебный переулок, 14</p><a href="#top">Наверх ↑</a><small>© 2026 Жито</small></footer>
+</body>
+</html>
