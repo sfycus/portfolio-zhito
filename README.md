@@ -1,5 +1,7 @@
 # Жито
 
+[Открыть сайт](https://sfycus.github.io/portfolio-sites/sites/grain/) · [Каталог проектов](https://sfycus.github.io/portfolio-sites/)
+
 Ремесленная пекарня · самостоятельный сайт для портфолио.
 
 <img src="assets/bread-in-hands.jpg" alt="Фотография для проекта Жито" width="760">
